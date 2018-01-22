@@ -42,6 +42,21 @@ header {
 		border-top: 10px solid #000;
 	}
 
+/* - Image Elements - */
+
+#portraitHolder h2 {
+	float: left;
+	margin-right: 100px;
+}
+#portraitHolder img {
+	clear: both;
+	display: inline-block;
+	margin: 10px 20px;
+	border: solid 5px #000;
+	box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+	border-radius: 50%;
+}
+
 /*Font Elements*/
 
 h1 {
