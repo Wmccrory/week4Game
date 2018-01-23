@@ -26,10 +26,17 @@ header {
 
 .content {
 	background-color:rgba(0, 0, 0, 0.5);
-	margin-top: 2em;
+	margin-top: 1em;
 	border-top: 10px solid #000;
 	border-bottom: 10px solid #000;
-	height: 125px;
+}
+
+#portraitHolder {
+	height: 150px;
+}
+
+#battleHolder {
+	height: 355px;
 }
 
 /* - Footer Elements - */
@@ -51,10 +58,42 @@ header {
 #portraitHolder img {
 	clear: both;
 	display: inline-block;
-	margin: 10px 20px;
-	border: solid 5px #000;
+	margin: 10px 10px;
+	border: solid 10px #000;
 	box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
 	border-radius: 50%;
+}
+
+#battleHolder h2 {
+	float: left;
+	margin-right: 100px;
+}
+#battleHolder img {
+	display: inline-block;
+	margin: 10px 50px;
+	border: solid 10px #000;
+	box-shadow: 0 0 20px #FF0000, 0 0 20px #0000FF;
+	border-radius: 50%;
+}
+
+#battleStats {
+	float: left;
+	padding-top: 10px;
+	padding-left: 50px;
+	margin-right: 100px;
+}
+
+#attackBtn:hover {
+	box-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
+}
+
+#attackBtn:active {
+	position: relative;
+	top: -0.25em;
+}
+
+.spacer {
+	min-width: 100px;
 }
 
 /*Font Elements*/
@@ -70,9 +109,18 @@ h2 {
 	font-family: "distant_galaxyregular";
 	font-size: 4em;
 	color: #ffe8e8;
-	padding-top: 10px;
-	padding-left: 50px;
+/*	padding-top: 10px;
+	padding-left: 50px;*/
 	text-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
+}
+
+h3 {
+	
+	font-family: "distant_galaxyregular";
+	font-size: 2em;
+	color: #ffe8e8;
+	text-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
+	margin: .5em;
 }
 
 h6 {
@@ -81,4 +129,12 @@ h6 {
 	color: #ffe8e8;
 	text-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
 	padding-left: 10px;
+}
+
+/* - Attack button - */
+
+#attackBtn {
+	border: solid 10px #ffe8e8;
+	box-shadow: 0 0 25px #FF0000, 0 0 25px #0000FF;
+	border-radius: 20px;
 }
