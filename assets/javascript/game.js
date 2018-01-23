@@ -6,7 +6,7 @@ $(document).ready(function(){
 });
 
 $(".close").click(function() {
-	$("#myModal").fadeOut(2200);
+	$("#myModal").fadeOut(1000);
 	$("#introVid").attr("src"," ");
 });
  ///////////////////////////////
@@ -38,12 +38,13 @@ $("#kidaportrait").click(function() {
 			return;
 		} else if (opponentTwoSelect !== true) {
 			$("#kidabattle").appendTo("#opponentOneBattle");
-			$("#opponentOneName").text("Anakin Skywalker");
+			$("#opponentOneName").text("Jedi Knight Anakin Skywalker");
 			$("#opponentOneHealth").text("Health: " + "100/100");
 		return;
 		} else {
 			$("#kidabattle").appendTo("#opponentTwoBattle");
-			$("#opponentTwoName").html("Anakin Skywalker");
+			$("#opponentTwoName").text("Jedi Knight Anakin Skywalker");
+			$("#opponentOneHealth").text("Health: " + "100/100");
 		}
 });
 
@@ -64,23 +65,28 @@ $("#kidbportrait").click(function() {
 $("#kidcportrait").click(function() {
 	$("#kidcportrait").fadeOut(1000);
 	$("#kidcbattle").fadeIn(1000);
-		if (opponentOneSelect = true) {
-		$("#kidcbattle").appendTo("#opponentOneBattle");
-		} else if (opponentTwoSelect = true) {
-		$("#kidcbattle").appendTo("#opponentTwoBattle");
+		if (opponentTwoSelect !== true) {
+			$("#kidcbattle").appendTo("#opponentOneBattle");
+			$("#opponentOneName").text("Tusken Kid (Force Ghost)");
+			$("#opponentOneHealth").text("Health: " + "100/100");
 		} else {
-			console.log("Game has shit the bed");
+			$("#kidcbattle").appendTo("#opponentTwoBattle");
+			$("#opponentTwoName").text("Tusken Kid (Force Ghost)");
+			$("#opponentTwoHealth").text("Health: " + "100/100");
 		}
+
 });
 
 $("#kiddportrait").click(function() {
 	$("#kiddportrait").fadeOut(1000);
 	$("#kiddbattle").fadeIn(1000);
-		if (opponentOneSelect = true) {
-		$("#kiddbattle").appendTo("#opponentOneBattle");
-		} else if (opponentTwoSelect = true) {
-		$("#kiddbattle").appendTo("#opponentTwoBattle");
+		if (opponentTwoSelect !== true) {
+			$("#kiddbattle").appendTo("#opponentOneBattle");
+			$("#opponentOneName").text("Smug Jedi Pre-teen");
+			$("#opponentOneHealth").text("Health: " + "100/100");
 		} else {
-			console.log("Game has shit the bed");
+			$("#kiddbattle").appendTo("#opponentTwoBattle");
+			$("#opponentTwoName").text("Smug Jedi Pre-teen");
+			$("#opponentTwoHealth").text("Health: " + "100/100");
 		}
 });
