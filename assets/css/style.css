@@ -131,6 +131,11 @@ h6 {
 	padding-left: 10px;
 }
 
+a {
+	text-decoration: none;
+	color: #ffe8e8;
+}
+
 /* - Attack button - */
 
 #attackBtn {
@@ -138,3 +143,63 @@ h6 {
 	box-shadow: 0 0 25px #FF0000, 0 0 25px #0000FF;
 	border-radius: 20px;
 }
+
+/* - Modal - */
+
+.modal {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	padding-top: 1%;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8)
+}
+
+.modalContent {
+	background: url(../images/sidiousModal.jpg);
+	margin: 0 auto;
+	border: 5px solid #ffe8e8;
+	border-radius: 15px;
+	height: 700px;
+	width: 1000px;
+	text-align: center;
+	box-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
+}
+
+.close {
+	color: #aaaaaa;
+	float: right;
+	margin-top: .25em;
+	margin-right: .5em;
+	font-size: 4em;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#introVid {
+	box-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
+}
+
+#spacer {
+	height: 200px;
+}
+
+/* - Media Queries - */
+
+/*@media only screen and (min-width: 2000px) {
+	html {
+		width: 2000px;
+		margin: 0 auto;
+	}
+}*/
