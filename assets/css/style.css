@@ -69,6 +69,7 @@ header {
 	float: left;
 	margin-right: 100px;
 }
+
 #battleHolder img {
 	display: inline-block;
 	margin: 10px 20px;
@@ -124,6 +125,10 @@ h3 {
 	color: #ffe8e8;
 	text-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
 	margin: .5em;
+}
+
+#attackBtn h3 {
+	width: 513px;
 }
 
 h6 {
