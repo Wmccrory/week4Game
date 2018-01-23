@@ -31,10 +31,10 @@
 	<section class="content" id="portraitHolder">
 		<h2>CHOOSE YOUR FIGHTER:</h2>
 
-		<span id="kidaportrait"><img src="assets/images/kidaportrait.png" alt="Anakin Skywalker" /></span>
-		<span id="kidbportrait"><img src="assets/images/kidbportrait.png" alt="Anakin Skywalker" /></span>
-		<span id="kidcportrait"><img src="assets/images/kidcportrait.png" alt="Anakin Skywalker" /></span>
-		<span id="kiddportrait"><img src="assets/images/kiddportrait.png" alt="Anakin Skywalker" /></span>
+		<span class = "pickingPortrait" id="kidaportrait"><img src="assets/images/kidaportrait.png" alt="Anakin Skywalker" /></span>
+		<span class = "pickingPortrait" id="kidbportrait"><img src="assets/images/kidbportrait.png" alt="Sors Bandeam" /></span>
+		<span class = "pickingPortrait" id="kidcportrait"><img src="assets/images/kidcportrait.png" alt="Anakin Skywalker" /></span>
+		<span class = "pickingPortrait" id="kiddportrait"><img src="assets/images/kiddportrait.png" alt="Anakin Skywalker" /></span>
 	
 	</section>
 <!-- Arena -->
@@ -43,13 +43,17 @@
 		<section id="battleStats">
 			<h2>THE ARENA:</h2>
 <!-- Player info -->
-			<h3>Anakin Skywalker:</h3>
-			<h6>Health: 100/100</h6>
-			<h6>Force Power: 180</h6>
+			<div id="opponentOneStats">
+			<h3 id="opponentOneName">Player:</h3>
+			<h6 id="opponentOneHealth">Health: </h6>
+			<h6 id="opponentOneForce">Force Power: </h6>
+			</div>
 
-			<h3>Sors Bandeam:</h3>
-			<h6>Health: 100/100</h6>
-			<h6>Force Power: 40</h6>
+			<div id="opponentTwoStats">
+			<h3 id="opponentTwoName">Opponent:</h3>
+			<h6 id="opponentTwoHealth">Health: </h6>
+			<h6 id="opponentTwoForce">Force Power: </h6>
+			</div>
 			<br>
 <!-- Attack button -->
 			<div id="attackBtn">
@@ -58,9 +62,17 @@
 
 		</section>
 <!-- Battle Portraits -->
-		<span id="kidabattle"><img src="assets/images/kidabattle.png" alt="Anakin Skywalker" /></span>
+		<span class= "battlePortrait" id="kidabattle"><img src="assets/images/kidabattle.png" alt="Anakin Skywalker" /></span>
 
-		<span id="kidbbattle"><img src="assets/images/kidbbattle.png" alt="Anakin Skywalker" /></span>
+		<span class= "battlePortrait" id="kidbbattle"><img src="assets/images/kidbbattle.png" alt="Sors Bandeam" /></span>
+
+		<span class= "battlePortrait" id="kidcbattle"><img src="assets/images/kidcbattle.png" alt="Anakin Skywalker" /></span>
+
+		<span class= "battlePortrait" id="kiddbattle"><img src="assets/images/kiddbattle.png" alt="Anakin Skywalker" /></span>
+
+		<span id = "opponentOneBattle"></span>
+
+		<span id = "opponentTwoBattle"></span>
 	
 	</section>
 <!-- Footer -->
