@@ -28,6 +28,7 @@ var enemySelect = false;
 var heroName;
 var heroHealth;
 var heroAttack;
+var heroBaseAttack;
 var heroPortrait;
 var heroBattlePortrait;
 var wins;
@@ -100,6 +101,7 @@ function heroSelect() {
 		$("#kidabattle").fadeIn(1000);
 		hero = kidA;
 		heroAttack = kidA.attack;
+		heroBaseAttack = kidA.attack;
 		heroHealth = kidA.maxHealth;
 		}
 	else if (hero === "kidbportrait")
@@ -109,6 +111,7 @@ function heroSelect() {
 		$("#kidbbattle").fadeIn(1000);
 		hero = kidB;
 		heroAttack = kidB.attack;
+		heroBaseAttack = kidB.attack;
 		heroHealth = kidB.maxHealth;
 		}
 	else if (hero === "kidcportrait")
@@ -118,6 +121,7 @@ function heroSelect() {
 		$("#kidcbattle").fadeIn(1000);
 		hero = kidC;
 		heroAttack = kidC.attack;
+		heroBaseAttack = kidC.attack;
 		heroHealth = kidC.maxHealth;
 		}
 	else if (hero === "kiddportrait")
@@ -127,6 +131,7 @@ function heroSelect() {
 		$("#kiddbattle").fadeIn(1000);
 		hero = kidD;
 		heroAttack = kidD.attack;
+		heroBaseAttack = kidD.attack;
 		heroHealth = kidD.maxHealth;
 		}
 	else
@@ -185,15 +190,30 @@ function attackMechanics() {
 	if (enemyHealth < 1) 
 	{
 		hero.wins++;
+		heroAttack = (heroAttack + heroBaseAttack);
+		$("#opponentOneForce").text(hero.attackDesc + heroAttack);
+		console.log(hero.wins);
 		enemySelect = false;
 		$(enemy.battlePortrait).fadeOut(1000);
-		console.log(enemy.battlePortrait);
 		$("#opponentTwoName").html("<s>" + enemy.name + "</s>");
 		$("#opponentTwoHealth").text("Opponent has been slain");
 		$("#opponentTwoForce").text("Choose another for the slaughter");
+		//Game win condition//
+		if (hero.wins === 3) 
+		{
+			console.log("You've won");
+			$("#myModal").fadeIn(1000);
+		}
+		else
+		{
+			return;
+		}
 	}
 	else 
 	{
+		heroAttack = (heroAttack + heroBaseAttack);
+		console.log(heroAttack);
+		$("#opponentOneForce").text(hero.attackDesc + heroAttack);
 		return $("#opponentTwoHealth").text("Health: " + enemyHealth);
 	}
 }
