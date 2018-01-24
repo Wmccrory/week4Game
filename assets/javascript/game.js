@@ -12,6 +12,11 @@ $(".close").click(function() {
 	$("#introVid").attr("src"," ");
 });
 
+$(".close").click(function() {
+	$("#victoryModal").fadeOut(1000);
+	$("#introVid").attr("src"," ");
+});
+
  ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -48,7 +53,7 @@ var kidA = {
 	"maxHealth": 1000,
 	"attack": 100,
 	"attackDesc": "Sith Rage (Here I go killin' younglings again): ",
-	"counterAttack": 600,
+	"counterAttack": 50,
 	"selectPortrait": "#kidaportrait",
 	"battlePortrait": "#kidabattle",
 	"wins": 0,
@@ -56,6 +61,8 @@ var kidA = {
 	"winVid": "<img src='assets/images/anakinWin.gif' alt='Anakin wins' />",
 	"loseMsg": "NOOOOOOOO",
 	"loseVid": "<img src='assets/images/anakinLose.gif' alt='Anakin loses' />",
+	"beatMsg": "THIS IS YOUR FAULT",
+	"beatVid": "<img src='assets/images/anakinBeat.gif' alt='You beat Anakin' />",
 }
 
 var kidB = {
@@ -69,8 +76,10 @@ var kidB = {
 	"wins": 0,
 	"winMsg": "NOW <u>THIS</u> IS PODRACING",
 	"winVid": "<img src='assets/images/sorsWin.gif' alt='Sors Bandeam wins' />",
-	"loseMsg": "NOW THIS IS <u>NOT</u> PODRACING",
+	"loseMsg": "YOU WERE SUPPOSED TO BRING BALANCE",
 	"loseVid": "<img src='assets/images/sorsLose.gif' alt='Sors Bandeam loses' />",
+	"beatMsg": "NOW THIS IS <u>NOT</u> PODRACING",
+	"beatVid": "<img src='assets/images/sorsBeat.gif' alt='You beat Sors' />",
 }
 
 var kidC = {
@@ -86,6 +95,8 @@ var kidC = {
 	"winVid": "<img src='assets/images/tuskenWin.gif' alt='Tusken kid wins' />",
 	"loseMsg": "RAARRGHHH RAGH RHAG",
 	"loseVid": "<img src='assets/images/tuskenLose.gif' alt='Tusken Kid loses' />",
+	"beatMsg": "RAARRGHHH RAGH RHAG",
+	"beatVid": "<img src='assets/images/tuskenBeat.gif' alt='You beat Tusken Kid' />",
 }
 
 var kidD = {
@@ -93,7 +104,7 @@ var kidD = {
 	"maxHealth": 1000,
 	"attack": 100,
 	"attackDesc": "Smug adolescant superiority: ",
-	"counterAttack": 600,
+	"counterAttack": 200,
 	"selectPortrait": "#kiddportrait",
 	"battlePortrait": "#kiddbattle",
 	"wins": 0,
@@ -101,6 +112,8 @@ var kidD = {
 	"winVid": "<img src='assets/images/preteenWin.gif' alt='Smug adolescant jedi wins' />",
 	"loseMsg": "I'M CALLING CPS",
 	"loseVid": "<img src='assets/images/preteenLose.gif' alt='Smug adolescant jedi loses' />",
+	"beatMsg": "NOOOO, IT'S NOT FAIR",
+	"beatVid": "<img src='assets/images/preteenBeat.gif' alt='You beat Smug adolescant jedi' />",
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -219,12 +232,15 @@ function attackMechanics() {
 		{
 			console.log("You've won");
 			$("#victoryModal").fadeIn(1000);
-			$("#winText").html("<h2>" + hero.loseMsg + "</h2>");
+			$("#winText").html("<h2>" + hero.winMsg + "</h2>");
+			$("#winRefresh").html("<h6>" +"REFRESH TO SEE THE STORIES OF YOUR OPPONENTS" + "</h6>");
 			$("#victoryVid").html(hero.winVid);;
 		}
 		else
 		{
-			return;
+			$("#victoryModal").fadeIn(1000);
+			$("#winText").html("<h2>" + enemy.beatMsg + "</h2>");
+			$("#victoryVid").html(enemy.beatVid);
 		}
 	}
 	else 
@@ -244,6 +260,7 @@ function counterAttackMechanics () {
 		console.log("You've won");
 		$("#victoryModal").fadeIn(1000);
 		$("#winText").html("<h2>" + hero.loseMsg + "</h2>");
+		$("#winRefresh").html("<h6>" +"REFRESH TO SEE THE STORIES OF YOUR OPPONENTS" + "</h6>");
 		$("#victoryVid").html(hero.loseVid);;
 	}
 	else

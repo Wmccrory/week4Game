@@ -203,8 +203,12 @@ a {
 	height: 200px;
 }
 
-#victoryModal {
-	background: url(..assets/images/winBackground.jpg);
+#modalVictory {
+	background: url(../images/winBackground.jpg);
+}
+
+#modalVictory img {
+	box-shadow: 0 0 50px #FF0000, 0 0 50px #0000FF;
 }
 
 /* - Media Queries - */
