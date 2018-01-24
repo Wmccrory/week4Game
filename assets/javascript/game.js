@@ -12,15 +12,34 @@ $(".close").click(function() {
 	$("#introVid").attr("src"," ");
 });
 
+ ///////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 $(document).ready(function() {
 
  /////////////////
 //Variable Bank//
-var hero = 1;
+var hero;
 var playerSelect = false;
 var enemy;
 var enemySelect = false;
+
+//Hero stats
+var heroName;
+var heroMaxHealth;
+var heroAttack;
+var heroCounterAttack;
+var heroPortrait;
+var heroBattlePortrait;
+var wins;
+
+//Enemy stats
+var enemyName;
+var enemyMaxHealth;
+var enemyAttack;
+var enemyCounterAttack;
+var enemyPortrait;
+var enemyBattlePortrait;
 
  ///////////////////
 //Character stats//
@@ -29,6 +48,7 @@ var kidA = {
 	"name": "Jedi Knight Anakin Skywalker",
 	"maxHealth": 100,
 	"attack": 100,
+	"attackDesc": "Sith Rage (Here I go killin' younglings again): ",
 	"counterAttack": 50,
 	"selectPortrait": "#kidaportrait",
 	"battlePortrait": "#kidabattle",
@@ -39,6 +59,7 @@ var kidB = {
 	"name": "Sors Bandeam",
 	"maxHealth": 100,
 	"attack": 100,
+	"attackDesc": "Resigned determination: ",
 	"counterAttack": 50,
 	"selectPortrait": "#kidbportrait",
 	"battlePortrait": "#kidbbattle",
@@ -49,6 +70,7 @@ var kidC = {
 	"name": "Tusken Kid (Force Ghost)",
 	"maxHealth": 100,
 	"attack": 100,
+	"attackDesc": "Power of Ghost of Younglings Past: ",
 	"counterAttack": 50,
 	"selectPortrait": "#kidcportrait",
 	"battlePortrait": "#kidcbattle",
@@ -59,6 +81,7 @@ var kidD = {
 	"name": "Smug Jedi Pre-teen",
 	"maxHealth": 100,
 	"attack": 100,
+	"attackDesc": "Smug adolescant superiority: ",
 	"counterAttack": 50,
 	"selectPortrait": "#kiddportrait",
 	"battlePortrait": "#kiddbattle",
@@ -77,24 +100,32 @@ function heroSelect() {
 		$("#kidabattle").appendTo("#opponentOneBattle");
 		$("#kidaportrait").fadeOut(1000);
 		$("#kidabattle").fadeIn(1000);
+		hero = kidA;
+		heroAttack = kidA.attack;
 		}
 	else if (hero === "kidbportrait")
 		{	
 		$("#kidbbattle").appendTo("#opponentOneBattle");
 		$("#kidbportrait").fadeOut(1000);
 		$("#kidbbattle").fadeIn(1000);
+		hero = kidB;
+		heroAttack = kidB.attack;
 		}
 	else if (hero === "kidcportrait")
 		{	
 		$("#kidcbattle").appendTo("#opponentOneBattle");
 		$("#kidcportrait").fadeOut(1000);
 		$("#kidcbattle").fadeIn(1000);
+		hero = kidC;
+		heroAttack = kidC.attack;
 		}
 	else if (hero === "kiddportrait")
 		{	
 		$("#kiddbattle").appendTo("#opponentOneBattle");
 		$("#kiddportrait").fadeOut(1000);
 		$("#kiddbattle").fadeIn(1000);
+		hero = kidD;
+		heroAttack = kidD.attack;
 		}
 	else
 		{
@@ -109,24 +140,33 @@ function opponentSelect() {
 		$("#kidabattle").appendTo("#opponentTwoBattle");
 		$("#kidaportrait").fadeOut(1000);
 		$("#kidabattle").fadeIn(1000);
+		enemy = kidA;
+		enemyAttack = kidA.attack;
+		console.log(heroAttack);
 		}
 	else if (enemy === "kidbportrait")
 		{	
 		$("#kidbbattle").appendTo("#opponentTwoBattle");
 		$("#kidbportrait").fadeOut(1000);
 		$("#kidbbattle").fadeIn(1000);
+		enemy = kidB;
+		enemyAttack = kidB.attack;
 		}
 	else if (enemy === "kidcportrait")
 		{	
 		$("#kidcbattle").appendTo("#opponentTwoBattle");
 		$("#kidcportrait").fadeOut(1000);
 		$("#kidcbattle").fadeIn(1000);
+		enemy = kidC;
+		enemyAttack = kidC.attack;
 		}
 	else if (enemy === "kiddportrait")
 		{	
 		$("#kiddbattle").appendTo("#opponentTwoBattle");
 		$("#kiddportrait").fadeOut(1000);
 		$("#kiddbattle").fadeIn(1000);
+		enemy = kidD;
+		enemyAttack = kidD.attack;
 		}
 	else
 		{
@@ -134,10 +174,14 @@ function opponentSelect() {
 		}		
 }
 
+   ///////////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
+ //Game progression/////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
- ////////////////////
-//Game progression//
+
+ //////////////////
+//Fighter Select//
 
 $(".pickingPortrait").on("click", function() {
 	if ((playerSelect === true) && (enemySelect === true)) 
@@ -148,23 +192,23 @@ $(".pickingPortrait").on("click", function() {
 		{	
 		playerSelect = true;
 		hero = this.id;
-		console.log(hero);
-		console.log("Hero selected");
 		heroSelect();
+		$("#opponentOneName").text(hero.name);
+		$("#opponentOneHealth").text("Health: " + hero.maxHealth);
+		$("#opponentOneForce").text(hero.attackDesc + heroAttack);
+		console.log(hero);
 		}
 	else
 		{
 		enemySelect = true;
 		enemy = this.id;
-		console.log(enemy);
-		console.log("Opponent selected");
 		opponentSelect();
+		$("#opponentTwoName").text(enemy.name);
+		$("#opponentTwoHealth").text("Health: " + enemy.maxHealth);
+		$("#opponentTwoForce").text(enemy.attackDesc + enemyAttack);
+		console.log(enemy);
 		}
 });
-
-
-
-
 
 
 
