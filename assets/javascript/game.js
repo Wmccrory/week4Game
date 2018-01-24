@@ -48,12 +48,14 @@ var kidA = {
 	"maxHealth": 1000,
 	"attack": 100,
 	"attackDesc": "Sith Rage (Here I go killin' younglings again): ",
-	"counterAttack": 50,
+	"counterAttack": 600,
 	"selectPortrait": "#kidaportrait",
 	"battlePortrait": "#kidabattle",
 	"wins": 0,
 	"winMsg": "EVEN IN VICTORY COMES LOSS",
-	"winVid": "<img src='assets/images/anakinWin.gif' alt='Anakin wins' />"
+	"winVid": "<img src='assets/images/anakinWin.gif' alt='Anakin wins' />",
+	"loseMsg": "NOOOOOOOO",
+	"loseVid": "<img src='assets/images/anakinLose.gif' alt='Anakin loses' />",
 }
 
 var kidB = {
@@ -65,8 +67,10 @@ var kidB = {
 	"selectPortrait": "#kidbportrait",
 	"battlePortrait": "#kidbbattle",
 	"wins": 0,
-	"winMsg": "NOW <u>THIS</u> IS PODRAGING",
-	"winVid": "<img src='assets/images/sorsWin.gif' alt='Sors Bandeam wins' />"
+	"winMsg": "NOW <u>THIS</u> IS PODRACING",
+	"winVid": "<img src='assets/images/sorsWin.gif' alt='Sors Bandeam wins' />",
+	"loseMsg": "NOW THIS IS <u>NOT</u> PODRACING",
+	"loseVid": "<img src='assets/images/sorsLose.gif' alt='Sors Bandeam loses' />",
 }
 
 var kidC = {
@@ -80,6 +84,8 @@ var kidC = {
 	"wins": 0,
 	"winMsg": "RAARRGHHH RAGH RHAG",
 	"winVid": "<img src='assets/images/tuskenWin.gif' alt='Tusken kid wins' />",
+	"loseMsg": "RAARRGHHH RAGH RHAG",
+	"loseVid": "<img src='assets/images/tuskenLose.gif' alt='Tusken Kid loses' />",
 }
 
 var kidD = {
@@ -93,6 +99,8 @@ var kidD = {
 	"wins": 0,
 	"winMsg": "This is the worst summer camp ever",
 	"winVid": "<img src='assets/images/preteenWin.gif' alt='Smug adolescant jedi wins' />",
+	"loseMsg": "I'M CALLING CPS",
+	"loseVid": "<img src='assets/images/preteenLose.gif' alt='Smug adolescant jedi loses' />",
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -211,7 +219,7 @@ function attackMechanics() {
 		{
 			console.log("You've won");
 			$("#victoryModal").fadeIn(1000);
-			$("#winText").html("<h2>" + hero.winMsg + "</h2>");
+			$("#winText").html("<h2>" + hero.loseMsg + "</h2>");
 			$("#victoryVid").html(hero.winVid);;
 		}
 		else
@@ -233,7 +241,10 @@ function counterAttackMechanics () {
 	heroHealth = heroHealth - enemyAttack;
 	if (heroHealth < 1) 
 	{
-		console.log("Hero has died");
+		console.log("You've won");
+		$("#victoryModal").fadeIn(1000);
+		$("#winText").html("<h2>" + hero.loseMsg + "</h2>");
+		$("#victoryVid").html(hero.loseVid);;
 	}
 	else
 	{
