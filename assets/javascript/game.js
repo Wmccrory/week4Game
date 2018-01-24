@@ -52,6 +52,8 @@ var kidA = {
 	"selectPortrait": "#kidaportrait",
 	"battlePortrait": "#kidabattle",
 	"wins": 0,
+	"winMsg": "EVEN IN VICTORY COMES LOSS",
+	"winVid": "<img src='assets/images/anakinWin.gif' alt='Anakin wins' />"
 }
 
 var kidB = {
@@ -63,6 +65,8 @@ var kidB = {
 	"selectPortrait": "#kidbportrait",
 	"battlePortrait": "#kidbbattle",
 	"wins": 0,
+	"winMsg": "NOW <u>THIS</u> IS PODRAGING",
+	"winVid": "<img src='assets/images/sorsWin.gif' alt='Sors Bandeam wins' />"
 }
 
 var kidC = {
@@ -74,6 +78,8 @@ var kidC = {
 	"selectPortrait": "#kidcportrait",
 	"battlePortrait": "#kidcbattle",
 	"wins": 0,
+	"winMsg": "RAARRGHHH RAGH RHAG",
+	"winVid": "<img src='assets/images/tuskenWin.gif' alt='Tusken kid wins' />",
 }
 
 var kidD = {
@@ -85,6 +91,8 @@ var kidD = {
 	"selectPortrait": "#kiddportrait",
 	"battlePortrait": "#kiddbattle",
 	"wins": 0,
+	"winMsg": "This is the worst summer camp ever",
+	"winVid": "<img src='assets/images/preteenWin.gif' alt='Smug adolescant jedi wins' />",
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -202,7 +210,9 @@ function attackMechanics() {
 		if (hero.wins === 3) 
 		{
 			console.log("You've won");
-			$("#myModal").fadeIn(1000);
+			$("#victoryModal").fadeIn(1000);
+			$("#winText").html("<h2>" + hero.winMsg + "</h2>");
+			$("#victoryVid").html(hero.winVid);;
 		}
 		else
 		{

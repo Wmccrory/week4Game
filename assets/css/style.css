@@ -152,7 +152,7 @@ a {
 	border-radius: 20px;
 }
 
-/* - Modal - */
+/* - Modal Elements - */
 
 .modal {
 	display: none;
@@ -201,6 +201,10 @@ a {
 
 #spacer {
 	height: 200px;
+}
+
+#victoryModal {
+	background: url(..assets/images/winBackground.jpg);
 }
 
 /* - Media Queries - */
