@@ -50,10 +50,10 @@ var enemyBattlePortrait;
 
 var kidA = {
 	"name": "Jedi Knight Anakin Skywalker",
-	"maxHealth": 1000,
-	"attack": 100,
+	"maxHealth": 180,
+	"attack": 5,
 	"attackDesc": "Sith Rage (Here I go killin' younglings again): ",
-	"counterAttack": 50,
+	"counterAttack": 25,
 	"selectPortrait": "#kidaportrait",
 	"battlePortrait": "#kidabattle",
 	"wins": 0,
@@ -67,10 +67,10 @@ var kidA = {
 
 var kidB = {
 	"name": "Sors Bandeam",
-	"maxHealth": 1000,
-	"attack": 100,
+	"maxHealth": 120,
+	"attack": 15,
 	"attackDesc": "Resigned determination: ",
-	"counterAttack": 50,
+	"counterAttack": 15,
 	"selectPortrait": "#kidbportrait",
 	"battlePortrait": "#kidbbattle",
 	"wins": 0,
@@ -84,10 +84,10 @@ var kidB = {
 
 var kidC = {
 	"name": "Tusken Kid (Force Ghost)",
-	"maxHealth": 1000,
-	"attack": 100,
+	"maxHealth": 100,
+	"attack": 40,
 	"attackDesc": "Power of Ghost of Younglings Past: ",
-	"counterAttack": 50,
+	"counterAttack": 5,
 	"selectPortrait": "#kidcportrait",
 	"battlePortrait": "#kidcbattle",
 	"wins": 0,
@@ -101,10 +101,10 @@ var kidC = {
 
 var kidD = {
 	"name": "Smug Jedi Pre-teen",
-	"maxHealth": 1000,
-	"attack": 100,
+	"maxHealth": 150,
+	"attack": 7,
 	"attackDesc": "Smug adolescant superiority: ",
-	"counterAttack": 200,
+	"counterAttack": 20,
 	"selectPortrait": "#kiddportrait",
 	"battlePortrait": "#kiddbattle",
 	"wins": 0,
