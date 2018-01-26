@@ -1,6 +1,5 @@
 //STAR WARS FIGHTER GAME///////////////////////////////////////////////////////////////////////////
 
- ///////////
 // MODAL //
 
 $(document).ready(function(){
@@ -22,7 +21,6 @@ $(".close").click(function() {
 
 $(document).ready(function() {
 
- /////////////////
 //Variable Bank//
 var hero;
 var playerSelect = false;
@@ -45,7 +43,6 @@ var enemyAttack;
 var enemyPortrait;
 var enemyBattlePortrait;
 
- ///////////////////
 //Character stats//
 
 var kidA = {
@@ -118,7 +115,6 @@ var kidD = {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
- /////////////////
 //Function bank//
 
 //Select hero//
@@ -163,10 +159,6 @@ function heroSelect() {
 		heroBaseAttack = kidD.attack;
 		heroHealth = kidD.maxHealth;
 		}
-	else
-		{
-		console.log("I don't know");
-		}	
 }
 
 //Select opponent//
@@ -206,11 +198,7 @@ function opponentSelect() {
 		enemy = kidD;
 		enemyAttack = kidD.counterAttack;
 		enemyHealth = kidD.maxHealth;
-		}
-	else
-		{
-		console.log("I don't know");
-		}		
+		}	
 }
 
 //Attack function//
@@ -231,14 +219,14 @@ function attackMechanics() {
 		if (hero.wins === 3) 
 		{
 			console.log("You've won");
-			$("#victoryModal").fadeIn(1000);
+			$("#victoryModal").fadeIn(500);
 			$("#winText").html("<h2>" + hero.winMsg + "</h2>");
 			$("#winRefresh").html("<h6>" +"REFRESH TO SEE THE STORIES OF YOUR OPPONENTS" + "</h6>");
 			$("#victoryVid").html(hero.winVid);;
 		}
 		else
 		{
-			$("#victoryModal").fadeIn(1000);
+			$("#victoryModal").fadeIn(500);
 			$("#winText").html("<h2>" + enemy.beatMsg + "</h2>");
 			$("#victoryVid").html(enemy.beatVid);
 		}
@@ -257,10 +245,11 @@ function counterAttackMechanics () {
 	heroHealth = heroHealth - enemyAttack;
 	if (heroHealth < 1) 
 	{
-		console.log("You've won");
-		$("#victoryModal").fadeIn(1000);
+		$("#opponentOneHealth").text("Health: " + heroHealth);
+		$("#victoryModal").fadeIn(500);
 		$("#winText").html("<h2>" + hero.loseMsg + "</h2>");
 		$("#winRefresh").html("<h6>" +"REFRESH TO SEE THE STORIES OF YOUR OPPONENTS" + "</h6>");
+		$(".close").html(" ");
 		$("#victoryVid").html(hero.loseVid);;
 	}
 	else
@@ -269,17 +258,9 @@ function counterAttackMechanics () {
 	}
 }
 
-
-
-   ///////////////////////////////////////////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////////////////////////
  //Game progression/////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
-
- //////////////////
 //Fighter Select//
-
 $(".pickingPortrait").on("click", function() {
 	if ((playerSelect === true) && (enemySelect === true)) 
 		{
@@ -307,9 +288,7 @@ $(".pickingPortrait").on("click", function() {
 		}
 });
 
- //////////////////
 //Fighter Attack//
-
 $("#attackBtn").on("click", function() {
 	if ((playerSelect === false) || (enemySelect === false))
 	{
